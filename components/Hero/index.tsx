@@ -13,7 +13,7 @@ export default function Hero() {
       <HeroInner>
         <HeroBadge>
           <span className="dot" />
-          Frontend Developer
+          Developer in Progress
         </HeroBadge>
 
         <HeroTitle>
@@ -22,8 +22,8 @@ export default function Hero() {
         </HeroTitle>
 
         <HeroSubtitle>
-          Next.js와 Spring Boot로 풀스택 서비스를 개발합니다.<br />
-          사용자 경험을 고민하며 완성도 높은 제품을 만들고 싶습니다.
+          통신사 API 연동 실무와 레거시 시스템 운영 경험을 바탕으로,<br />
+          더 나은 코드와 안정적인 서비스를 고민하며 성장 중인 개발자입니다.
         </HeroSubtitle>
 
         <HeroButtons>
@@ -31,7 +31,7 @@ export default function Hero() {
             <GitBranch  size={18} />
             GitHub
           </PrimaryButton>
-          <SecondaryButton href="mailto:your@email.com">
+          <SecondaryButton href="mailto:korgoddd@gmail.com">
             <Mail size={18} />
             Contact
           </SecondaryButton>
