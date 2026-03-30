@@ -14,6 +14,10 @@ export const ProjectsWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 7rem 1.6rem;
+  }
 `;
 
 export const SectionLabel = styled.p`
@@ -42,10 +46,17 @@ export const TabBar = styled.div`
   border: 1px solid rgba(172, 229, 255, 0.15);
   border-radius: 10px;
   overflow: hidden;
+  width: 100%;
+  max-width: 960px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 2.4rem;
+  }
 `;
 
 export const TabButton = styled.button<{ $active: boolean }>`
-  padding: 1.1rem 3.2rem;
+  flex: 1;
+  padding: 1.1rem 1.6rem;
   font-size: 1.4rem;
   font-weight: 500;
   cursor: pointer;
@@ -67,6 +78,11 @@ export const TabButton = styled.button<{ $active: boolean }>`
     background: rgba(0, 150, 255, 0.12);
     color: rgba(255, 255, 255, 0.8);
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+    padding: 1rem 0.8rem;
+  }
 `;
 
 export const ProjectCard = styled.div`
@@ -84,9 +100,13 @@ export const CardHeader = styled.div`
   border-bottom: 1px solid rgba(172, 229, 255, 0.1);
   background: rgba(0, 150, 255, 0.05);
 
+  @media (max-width: 768px) {
+    padding: 2.4rem 2rem;
+  }
+
   .header_top {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 1.2rem;
@@ -98,11 +118,22 @@ export const CardHeader = styled.div`
     font-weight: 700;
     color: #ffffff;
 
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+
     span {
       color: #ACE5FF;
       margin-left: 1.2rem;
       font-size: 1.5rem;
       font-weight: 400;
+
+      @media (max-width: 768px) {
+        display: block;
+        margin-left: 0;
+        margin-top: 0.4rem;
+        font-size: 1.4rem;
+      }
     }
   }
 
@@ -118,6 +149,7 @@ export const CardHeader = styled.div`
     border: 1px solid rgba(172, 229, 255, 0.2);
     border-radius: 999px;
     padding: 0.3rem 1.1rem;
+    white-space: nowrap;
   }
 
   .badge_type {
@@ -127,6 +159,7 @@ export const CardHeader = styled.div`
     border-radius: 999px;
     padding: 0.3rem 1.1rem;
     background: rgba(172, 229, 255, 0.07);
+    white-space: nowrap;
   }
 
   .header_desc {
@@ -134,12 +167,20 @@ export const CardHeader = styled.div`
     color: rgba(255, 255, 255, 0.55);
     line-height: 1.8;
     max-width: 680px;
+
+    @media (max-width: 768px) {
+      font-size: 1.4rem;
+    }
   }
 `;
 
 export const CardSection = styled.div`
   padding: 3.2rem 4rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+  @media (max-width: 768px) {
+    padding: 2.4rem 2rem;
+  }
 
   .section_title {
     font-size: 1.3rem;
@@ -209,11 +250,19 @@ export const FeatureItem = styled.li`
       font-weight: 600;
       color: #ffffff;
       margin-bottom: 0.4rem;
+
+      @media (max-width: 768px) {
+        font-size: 1.4rem;
+      }
     }
     .feature_desc {
       font-size: 1.35rem;
       color: rgba(255, 255, 255, 0.5);
       line-height: 1.7;
+
+      @media (max-width: 768px) {
+        font-size: 1.3rem;
+      }
     }
   }
 `;
@@ -223,6 +272,10 @@ export const GithubLinks = styled.div`
   display: flex;
   gap: 1.2rem;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 `;
 
 export const GithubButton = styled.a`

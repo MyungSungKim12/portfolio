@@ -109,6 +109,11 @@ export const HeroButtons = styled.div`
   justify-content: center;
   opacity: 0;
   animation: ${fadeInUp} 0.8s ease 0.6s forwards;
+
+  @media (max-width: 768px) {
+    gap: 1.2rem;
+    width: 100%;
+  }
 `;
 
 export const PrimaryButton = styled.a`
@@ -133,6 +138,13 @@ export const PrimaryButton = styled.a`
     color: #ffffff;
     transform: translateY(-2px);
   }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+    padding: 1.4rem 2rem;
+    font-size: 1.4rem;
+  }
 `;
 
 export const SecondaryButton = styled.a`
@@ -154,6 +166,13 @@ export const SecondaryButton = styled.a`
     border-color: rgba(255, 255, 255, 0.3);
     color: #ffffff;
     transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    justify-content: center;
+    padding: 1.4rem 2rem;
+    font-size: 1.4rem;
   }
 `;
 

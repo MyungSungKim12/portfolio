@@ -44,7 +44,7 @@ export const AboutGrid = styled.div`
   animation: ${fadeInUp} 0.8s ease forwards;
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;   
   }
 `;
 
@@ -78,6 +78,10 @@ export const StackGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.2rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;   /* ← 추가 */
+  }
 `;
 
 export const StackRow = styled.div`

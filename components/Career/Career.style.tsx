@@ -14,6 +14,10 @@ export const CareerWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 7rem 1.6rem;
+  }
 `;
 
 export const SectionLabel = styled.p`
@@ -33,6 +37,10 @@ export const SectionTitle = styled.h2`
   text-align: center;
 
   span { color: #ACE5FF; }
+
+  @media (max-width: 768px) {
+    margin-bottom: 4rem;
+  }
 `;
 
 export const CareerCard = styled.div`
@@ -50,6 +58,10 @@ export const CareerHeader = styled.div`
   border-bottom: 1px solid rgba(172, 229, 255, 0.1);
   background: rgba(0, 150, 255, 0.05);
 
+  @media (max-width: 768px) {
+    padding: 2.4rem 2rem;
+  }
+
   .career_top {
     display: flex;
     align-items: center;
@@ -63,6 +75,10 @@ export const CareerHeader = styled.div`
     font-size: 2rem;
     font-weight: 700;
     color: #ffffff;
+
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
   }
 
   .career_period {
@@ -91,6 +107,11 @@ export const CareerBody = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3.2rem;
+
+  @media (max-width: 768px) {
+    padding: 2.4rem 2rem;
+    gap: 2.4rem;
+  }
 `;
 
 export const WorkGroup = styled.div`
@@ -102,6 +123,10 @@ export const WorkGroup = styled.div`
     font-weight: 600;
     color: #ffffff;
     margin-bottom: 1.2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.35rem;
+    }
 
     &::before {
       content: '';
@@ -131,6 +156,10 @@ export const WorkItem = styled.li`
   color: rgba(255, 255, 255, 0.55);
   line-height: 1.7;
 
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+
   &::before {
     content: '•';
     color: #ACE5FF;
@@ -146,6 +175,10 @@ export const StackFooter = styled.div`
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+  }
 
   .stack_label {
     font-size: 1.2rem;
