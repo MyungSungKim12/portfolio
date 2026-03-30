@@ -76,11 +76,11 @@ export const PROJECT_MOVIEFILTER = {
     database: ['MSSQL', 'Supabase PostgreSQL', 'RPC 함수 설계', 'RLS 정책 관리'],
   },
   features: [
-    { icon: '🔐', title: 'OAuth2 소셜 로그인 & 인증 체계', desc: 'Google / Kakao / Naver OAuth2 소셜 로그인 연동 및 JWT AccessToken / RefreshToken 이중 인증 체계 구현' },
-    { icon: '🎬', title: '감정 기반 영화 추천', desc: '사용자 감정·장르 선택 기반 영화 추천 시스템 구현, TMDB / IMDb / Metacritic / Rotten Tomatoes 4개 평점 연동' },
-    { icon: '▶️', title: '멀티미디어 콘텐츠 연동', desc: 'YouTube 예고편 및 네이버 블로그 리뷰 탭 연동, OTT 플랫폼(Netflix · Wavve · Disney+ · Tving) 바로가기 제공' },
-    { icon: '📊', title: '마이페이지 통계 시각화', desc: 'Supabase RPC 함수로 클릭·취향 통계 집계, 바 차트 시각화 마이페이지 구현' },
-    { icon: '🖼️', title: 'Cloudflare R2 이미지 관리', desc: 'Cloudflare R2 연동 프로필 이미지 업로드 / 관리 기능 구현' },
+    { icon: '◆', title: 'OAuth2 소셜 로그인 & 인증 체계', desc: 'Google / Kakao / Naver OAuth2 소셜 로그인 연동 및 JWT AccessToken / RefreshToken 이중 인증 체계 구현' },
+    { icon: '◆', title: '감정 기반 영화 추천', desc: '사용자 감정·장르 선택 기반 영화 추천 시스템 구현, TMDB / IMDb / Metacritic / Rotten Tomatoes 4개 평점 연동' },
+    { icon: '◆', title: '멀티미디어 콘텐츠 연동', desc: 'YouTube 예고편 및 네이버 블로그 리뷰 탭 연동, OTT 플랫폼(Netflix · Wavve · Disney+ · Tving) 바로가기 제공' },
+    { icon: '◆', title: '마이페이지 통계 시각화', desc: 'Supabase RPC 함수로 클릭·취향 통계 집계, 바 차트 시각화 마이페이지 구현' },
+    { icon: '◆', title: 'Cloudflare R2 이미지 관리', desc: 'Cloudflare R2 연동 프로필 이미지 업로드 / 관리 기능 구현' },
   ],
   troubles: [
     { problem: 'Next.js rewrite의 Authorization 헤더 차단 이슈', solution: 'API Route 커스텀 프록시 서버로 전환하여 해결' },
@@ -88,6 +88,34 @@ export const PROJECT_MOVIEFILTER = {
     { problem: '모든 사용자 데이터가 동일 계정에 쌓이는 인증 오류', solution: 'JWT payload 파싱으로 user_id 저장 플로우 전면 수정' },
     { problem: 'React Query 타이밍 이슈로 인한 조기 실행', solution: 'enabled 조건에 userId 유효성 체크 추가로 조기 실행 방지' },
   ],
+};
+
+// ── 개인 프로젝트: WelfareMap ───────────────────────────
+export const PROJECT_WELFAREMAP = {
+  title: 'WelfareMap',
+  subtitle: '지역 기반 복지 정보 통합 서비스',
+  period: '2026.03 ~ 진행 중',
+  type: '개인 프로젝트',
+  description:
+    '고령화 사회를 염두한 지역 기반 복지 정보 통합 서비스입니다. 사용자의 위치·나이대·상황을 기반으로 맞춤 복지 정보를 한눈에 제공하며, 복지로 API와 공공데이터포털 API를 연동하여 실시간 데이터를 제공합니다.',
+  github: {
+    fe: 'https://github.com/MyungSungKim12/welfare-map-fe',
+    be: 'https://github.com/MyungSungKim12/welfare-map-be',
+  },
+  techStack: {
+    frontend: ['Next.js 15', 'TypeScript', 'Styled-components'],
+    backend: ['Spring Boot 3', 'Java 21'],
+    database: ['Supabase PostgreSQL'],
+    etc: ['카카오맵 API', '복지로 API', '공공데이터포털 API'],
+  },
+  features: [
+    { icon: '◆', title: '위치 기반 맞춤 복지 조회', desc: 'GPS 자동 감지 또는 직접 선택으로 현재 위치 기반 주변 복지 서비스 조회 기능 구현' },
+    { icon: '◆', title: '생애주기별 빠른 진입', desc: '영유아·청년·신혼부부·중장년·노년·장애인 6가지 생애주기 카드로 빠른 필터 진입 UI 설계' },
+    { icon: '◆', title: '맞춤 필터링 시스템', desc: '나이대·상황 조합 필터로 나에게 해당하는 복지 서비스만 선별 조회' },
+    { icon: '◆', title: '고령자 친화 UI/UX', desc: '큰 글씨·큰 버튼·고대비 색상 적용으로 디지털 취약계층도 쉽게 이용 가능한 접근성 설계' },
+    { icon: '◆', title: '실시간 복지 데이터 통합', desc: '복지로 API / 공공데이터포털 API 연동으로 전국 복지 서비스 실시간 조회' },
+  ],
+  troubles: [],
 };
 
 // ── 교육 프로젝트: 일해요 ───────────────────────────────
@@ -108,10 +136,10 @@ export const PROJECT_ILHAEYO = {
     database: ['MySQL', 'ERD 설계', '외부 캘린더 API 연동'],
   },
   features: [
-    { icon: '👥', title: '사업자 / 근로자 구분 회원 시스템', desc: '사업자와 근로자 역할을 구분한 회원가입 및 로그인 시스템 풀스택 구현' },
-    { icon: '📋', title: '직원 관리 & 급여명세서', desc: '직원 정보 관리, 급여 계산 및 명세서 발급 기능 구현' },
-    { icon: '📅', title: '근태 · 연차 · 전자결재 관리', desc: '출퇴근 기록, 연차 신청/승인, 전자결재 워크플로우 구현 및 외부 캘린더 API 연동' },
-    { icon: '🗄️', title: 'DB 설계 및 팀 기획 총괄', desc: 'MySQL DB 설계, 팀 내 스토리보드·ERD 총괄, 팀 소통 및 회의 주도' },
+    { icon: '◆', title: '사업자 / 근로자 구분 회원 시스템', desc: '사업자와 근로자 역할을 구분한 회원가입 및 로그인 시스템 풀스택 구현' },
+    { icon: '◆', title: '직원 관리 & 급여명세서', desc: '직원 정보 관리, 급여 계산 및 명세서 발급 기능 구현' },
+    { icon: '◆', title: '근태 · 연차 · 전자결재 관리', desc: '출퇴근 기록, 연차 신청/승인, 전자결재 워크플로우 구현 및 외부 캘린더 API 연동' },
+    { icon: '◆', title: 'DB 설계 및 팀 기획 총괄', desc: 'MySQL DB 설계, 팀 내 스토리보드·ERD 총괄, 팀 소통 및 회의 주도' },
   ],
   troubles: [],
 };

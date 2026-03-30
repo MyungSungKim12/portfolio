@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { GitBranch } from 'lucide-react';
-import { PROJECT_MOVIEFILTER, PROJECT_ILHAEYO } from '@/constants/data';
+import { PROJECT_MOVIEFILTER, PROJECT_WELFAREMAP, PROJECT_ILHAEYO } from '@/constants/data';
 import {
   ProjectsWrapper, SectionLabel, SectionTitle,
   TabBar, TabButton,
@@ -13,12 +13,13 @@ import {
 } from './Projects.style';
 
 const TABS = [
-  { key: 'moviefilter', label: 'MovieFilter', data: PROJECT_MOVIEFILTER },
-  { key: 'ilhaeyo',     label: '일해요',       data: PROJECT_ILHAEYO },
+  { key: 'moviefilter',  label: 'MovieFilter',  data: PROJECT_MOVIEFILTER },
+  { key: 'welfaremap',   label: 'WelfareMap',   data: PROJECT_WELFAREMAP },
+  { key: 'ilhaeyo',      label: '일해요',        data: PROJECT_ILHAEYO },
 ];
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState<'moviefilter' | 'ilhaeyo'>('moviefilter');
+  const [activeTab, setActiveTab] = useState<'moviefilter' | 'welfaremap' | 'ilhaeyo'>('moviefilter');
   const project = TABS.find((t) => t.key === activeTab)!.data;
 
   return (
