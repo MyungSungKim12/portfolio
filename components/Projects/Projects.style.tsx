@@ -1,6 +1,7 @@
 'use client';
 
 import styled, { keyframes } from 'styled-components';
+import Image from 'next/image';
 
 const fadeInUp = keyframes`
   from { opacity: 0; transform: translateY(24px); }
@@ -278,14 +279,16 @@ export const GithubLinks = styled.div`
   }
 `;
 
-export const GithubButton = styled.a`
+export const GithubButton = styled.a<{ $primary?: boolean }>`
   display: inline-flex;
   align-items: center;
   gap: 0.8rem;
   padding: 1rem 2rem;
-  border: 1px solid rgba(172, 229, 255, 0.3);
+  border: 1px solid ${({ $primary }) =>
+    $primary ? 'rgba(172, 229, 255, 0.6)' : 'rgba(172, 229, 255, 0.3)'};
   border-radius: 8px;
-  background: rgba(0, 150, 255, 0.1);
+  background: ${({ $primary }) =>
+    $primary ? 'rgba(0, 150, 255, 0.25)' : 'rgba(0, 150, 255, 0.1)'};
   color: #ACE5FF;
   font-size: 1.35rem;
   font-weight: 500;
@@ -293,8 +296,130 @@ export const GithubButton = styled.a`
   transition: all 0.3s ease;
 
   &:hover {
-    background: rgba(0, 150, 255, 0.25);
+    background: rgba(0, 150, 255, 0.35);
     box-shadow: 0 0 16px rgba(172, 229, 255, 0.25);
     transform: translateY(-2px);
+  }
+`;
+
+// ── 이미지 슬라이더 ──────────────────────────────────────
+
+export const ImageSlider = styled.div`
+  position: relative;
+  width: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+`;
+
+export const SliderTrack = styled.div`
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    height: 240px;
+  }
+`;
+
+export const SliderImage = styled(Image)``;
+
+export const SliderBtn = styled.button<{ $dir: 'left' | 'right' }>`
+  position: absolute;
+  ${({ $dir }) => $dir === 'left' ? 'left: 12px;' : 'right: 12px;'}
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(172, 229, 255, 0.3);
+  background: rgba(0, 0, 0, 0.6);
+  color: #ACE5FF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: rgba(0, 150, 255, 0.3);
+    border-color: #ACE5FF;
+  }
+`;
+
+export const SliderDots = styled.div`
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+`;
+
+export const SliderDot = styled.button<{ $active: boolean }>`
+  width: ${({ $active }) => $active ? '18px' : '6px'};
+  height: 6px;
+  border-radius: 3px;
+  border: none;
+  padding: 0;
+  background: ${({ $active }) =>
+    $active ? '#ACE5FF' : 'rgba(255,255,255,0.3)'};
+  cursor: pointer;
+  transition: all 0.3s ease;
+`;
+
+// ── 트러블슈팅 ───────────────────────────────────────────
+
+export const TroubleList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+
+export const TroubleItem = styled.div`
+  border: 1px solid rgba(172, 229, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+
+  .trouble_problem {
+    padding: 1.6rem 2rem;
+    background: rgba(255, 80, 80, 0.05);
+    border-bottom: 1px solid rgba(172, 229, 255, 0.08);
+  }
+
+  .trouble_solution {
+    padding: 1.6rem 2rem;
+    background: rgba(0, 150, 255, 0.04);
+  }
+
+  .trouble_label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .trouble_problem .trouble_label { color: rgba(255, 100, 100, 0.7); }
+  .trouble_solution .trouble_label { color: rgba(100, 200, 255, 0.7); }
+
+  .trouble_title {
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.6rem;
+  }
+
+  .trouble_detail {
+    font-size: 1.35rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.8;
   }
 `;
