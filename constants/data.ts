@@ -170,11 +170,35 @@ export const PROJECT_WELFAREMAP = {
 // ── 교육 프로젝트: 일해요 ───────────────────────────────
 export const PROJECT_ILHAEYO = {
   title: '일해요',
-  subtitle: '아르바이트 간편 매니저',
+  subtitle: '아르바이트 직원 및 일정 관리 서비스 제공 시스템',  // ← 수정
   period: '2023.04 ~ 2023.06',
   type: '6인 팀 프로젝트',
   description:
-    '사업자와 근로자를 구분한 회원 시스템을 기반으로, 직원 관리 · 급여명세서 · 근태 · 연차 · 전자결재 기능을 통합한 아르바이트 관리 플랫폼입니다. 인천일보아카데미 수료 프로젝트로 팀 내 DB 설계 및 기획을 총괄했습니다.',
+    '사장과 직원 모두를 위한 업무 관리 매니저. 직원들 간 일정 관리 및 근무 내역을 한눈에 볼 수 있는 기능을 제공합니다. 사업자와 근로자를 구분한 회원 시스템을 기반으로, 직원 관리 · 급여명세서 · 근태 · 연차 · 전자결재 기능을 통합한 아르바이트 관리 플랫폼입니다.',  // ← 수정
+  images: [
+    '/images/ilhaeyo/1.png',
+    '/images/ilhaeyo/2.png',
+    '/images/ilhaeyo/3.png',
+    '/images/ilhaeyo/4.png',
+    '/images/ilhaeyo/5.png',
+    '/images/ilhaeyo/6.png',
+    '/images/ilhaeyo/7.png',
+    '/images/ilhaeyo/8.png',
+    '/images/ilhaeyo/9.png',
+    '/images/ilhaeyo/10.png',
+    '/images/ilhaeyo/11.png',
+    '/images/ilhaeyo/12.png',
+    '/images/ilhaeyo/13.png',
+    '/images/ilhaeyo/14.png',
+    '/images/ilhaeyo/15.png',
+    '/images/ilhaeyo/16.png',
+    '/images/ilhaeyo/17.png',
+    '/images/ilhaeyo/18.png',
+    '/images/ilhaeyo/19.png',
+    '/images/ilhaeyo/20.png',
+    '/images/ilhaeyo/21.png',
+    '/images/ilhaeyo/22.png',
+  ],
   github: {
     fe: 'https://github.com/sowh5462/profront',
     be: 'https://github.com/sowh5462/proback',
