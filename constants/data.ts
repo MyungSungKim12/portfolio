@@ -147,6 +147,7 @@ export const PROJECT_WELFAREMAP = {
     '/images/welfaremap/03.png',
     '/images/welfaremap/04.png',
   ],
+  deployUrl: 'https://welfare-map-fe.vercel.app',
   github: {
     fe: 'https://github.com/MyungSungKim12/welfare-map-fe',
     be: 'https://github.com/MyungSungKim12/welfare-map-be',
