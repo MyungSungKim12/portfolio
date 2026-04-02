@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import Image from 'next/image';
 import { GitBranch, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react';
 import { PROJECT_MOVIEFILTER, PROJECT_WELFAREMAP, PROJECT_ILHAEYO } from '@/constants/data';
@@ -11,10 +11,10 @@ import {
   StackGroup, StackRow, StackTag,
   FeatureList, FeatureItem,
   GithubLinks, GithubButton,
-  // 새로 추가
   ImageSlider, SliderTrack, SliderImage,
   SliderBtn, SliderDots, SliderDot,
   TroubleList, TroubleItem,
+  TroublePaging, TroublePageBtn, TroublePageInfo,
 } from './Projects.style';
 
 const TABS = [
@@ -23,15 +23,26 @@ const TABS = [
   { key: 'ilhaeyo',    label: '일해요',       data: PROJECT_ILHAEYO },
 ];
 
+const TROUBLE_PER_PAGE = 3;
+
 export default function Projects() {
   const [activeTab, setActiveTab] = useState<'moviefilter' | 'welfaremap' | 'ilhaeyo'>('moviefilter');
   const [slideIdx, setSlideIdx] = useState(0);
+  const [troublePage, setTroublePage] = useState(0);
+
   const project = TABS.find((t) => t.key === activeTab)!.data;
   const images = (project as any).images ?? [];
+  const troubles = (project as any).troubles ?? [];
+  const totalTroublePages = Math.ceil(troubles.length / TROUBLE_PER_PAGE);
+  const pagedTroubles = troubles.slice(
+    troublePage * TROUBLE_PER_PAGE,
+    (troublePage + 1) * TROUBLE_PER_PAGE
+  );
 
   const handleTab = (key: string) => {
     setActiveTab(key as typeof activeTab);
     setSlideIdx(0);
+    setTroublePage(0);
   };
 
   const prev = () => setSlideIdx((i) => (i - 1 + images.length) % images.length);
@@ -122,11 +133,11 @@ export default function Projects() {
         </CardSection>
 
         {/* 트러블슈팅 */}
-        {(project as any).troubles?.length > 0 && (
+        {troubles.length > 0 && (
           <CardSection>
             <p className="section_title">Trouble Shooting</p>
             <TroubleList>
-              {(project as any).troubles.map((t: any, i: number) => (
+              {pagedTroubles.map((t: any, i: number) => (
                 <TroubleItem key={i}>
                   <div className="trouble_problem">
                     <span className="trouble_label">Problem</span>
@@ -140,6 +151,27 @@ export default function Projects() {
                 </TroubleItem>
               ))}
             </TroubleList>
+
+            {/* 페이징 */}
+            {totalTroublePages > 1 && (
+              <TroublePaging>
+                <TroublePageBtn
+                  onClick={() => setTroublePage((p) => p - 1)}
+                  disabled={troublePage === 0}
+                >
+                  <ChevronLeft size={16} />
+                </TroublePageBtn>
+                <TroublePageInfo>
+                  {troublePage + 1} / {totalTroublePages}
+                </TroublePageInfo>
+                <TroublePageBtn
+                  onClick={() => setTroublePage((p) => p + 1)}
+                  disabled={troublePage === totalTroublePages - 1}
+                >
+                  <ChevronRight size={16} />
+                </TroublePageBtn>
+              </TroublePaging>
+            )}
           </CardSection>
         )}
 

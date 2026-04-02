@@ -423,3 +423,44 @@ export const TroubleItem = styled.div`
     line-height: 1.8;
   }
 `;
+
+// ── 트러블슈팅 페이징 ─────────────────────────────────────
+
+export const TroublePaging = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-top: 2.4rem;
+`;
+
+export const TroublePageBtn = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(172, 229, 255, 0.3);
+  background: rgba(0, 150, 255, 0.1);
+  color: #ACE5FF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background: rgba(0, 150, 255, 0.3);
+    border-color: #ACE5FF;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+`;
+
+export const TroublePageInfo = styled.span`
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.5);
+  min-width: 48px;
+  text-align: center;
+`;

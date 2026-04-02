@@ -141,6 +141,12 @@ export const PROJECT_WELFAREMAP = {
   type: '개인 프로젝트',
   description:
     '고령화 사회를 염두한 지역 기반 복지 정보 통합 서비스입니다. 사용자의 위치·나이대·상황을 기반으로 맞춤 복지 정보를 한눈에 제공하며, 복지로 API와 공공데이터포털 API를 연동하여 실시간 데이터를 제공합니다.',
+  images: [
+    '/images/welfaremap/01.png',
+    '/images/welfaremap/02.png',
+    '/images/welfaremap/03.png',
+    '/images/welfaremap/04.png',
+  ],
   github: {
     fe: 'https://github.com/MyungSungKim12/welfare-map-fe',
     be: 'https://github.com/MyungSungKim12/welfare-map-be',
