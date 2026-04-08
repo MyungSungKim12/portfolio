@@ -7,10 +7,10 @@ import {
 } from './About.style';
 
 const CARDS = [
-  { icon: '🛠️', title: '현업 실무', desc: '통신사 API 연동으로 서비스를 운영하고, JSP/Java 레거시 시스템부터 사내 시스템 디지털 전환을 주도했습니다.' },
-  { icon: '🚀', title: '개인 프로젝트', desc: 'Next.js + Spring Boot 풀스택으로 영화 추천 서비스와 복지 정보 통합 서비스를 직접 설계하고 구현하고 있습니다.' },
-  { icon: '🔧', title: '트러블슈팅', desc: '장애 패턴 분석부터 JWT 인증 플로우 개선까지, 문제의 근본 원인을 파악하고 해결하는 과정을 즐깁니다.' },
-  { icon: '🌱', title: '꾸준한 성장', desc: '레거시 시스템 유지보수와 모던 스택 개발을 병행하며, 실무와 사이드 프로젝트 모두에서 지속 학습하고 있습니다.' },
+  { title: '현업 실무', desc: '통신사 API 연동으로 서비스를 운영하고, JSP/Java 레거시 시스템부터 사내 시스템 디지털 전환을 주도했습니다.' },
+  { title: '개인 프로젝트', desc: 'Next.js + Spring Boot 풀스택으로 영화 추천 서비스와 복지 정보 통합 서비스를 직접 설계하고 구현하고 있습니다.' },
+  { title: '트러블슈팅', desc: '장애 패턴 분석부터 JWT 인증 플로우 개선까지, 문제의 근본 원인을 파악하고 해결하는 과정을 즐깁니다.' },
+  { title: '꾸준한 성장', desc: '레거시 시스템 유지보수와 모던 스택 개발을 병행하며, 실무와 사이드 프로젝트 모두에서 지속 학습하고 있습니다.' },
 ];
 
 const STACKS = [
@@ -29,7 +29,6 @@ export default function About() {
       <AboutGrid>
         {CARDS.map((c) => (
           <AboutCard key={c.title}>
-            <div className="card_icon">{c.icon}</div>
             <h3 className="card_title">{c.title}</h3>
             <p className="card_desc">{c.desc}</p>
           </AboutCard>
